@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ISOKO Y’UMUCO LTD - Nurturing Rwandan Talent through culture, dance, and art. Empowering children to express creativity.">
+    
+    <meta property="og:title" content="ISOKO Y’UMUCO | Nurturing Rwandan Talent">
+    <meta property="og:description" content="Help us empower underprivileged children through dance, poetry, and art. Join our mission today.">
+    <meta property="og:image" content="1000123320.jpg.jpeg">
+    <meta property="og:url" content="https://isokoyumuco.rw">
+    <meta property="og:type" content="website">
+
+    <title>ISOKO Y’UMUCO LTD | Nurturing Rwandan Talent</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon"> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --rwanda-green: #2e7d32;
+            --rwanda-yellow: #f9a825;
+            --rwanda-blue: #00a1de;
+            --dark-text: #2d3436;
+        }
+
+        body { font-family: 'Open Sans', sans-serif; color: var(--dark-text); line-height: 1.6; overflow-x: hidden; }
+        h1, h2, h3, h4, .navbar-brand { font-family: 'Montserrat', sans-serif; font-weight: 700; }
+        
+        html { scroll-behavior: smooth; }
+
+        /* Navigation */
+        .navbar { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); box-shadow: 0 2px 15px rgba(0,0,0,0.1); }
+        .nav-link { font-weight: 600; color: var(--dark-text) !important; transition: 0.3s; }
+        .nav-link:hover { color: var(--rwanda-green) !important; }
+        .btn-donate-nav { background-color: var(--rwanda-yellow); color: #000; font-weight: bold; border-radius: 20px; padding: 8px 25px; text-decoration: none; }
+        .btn-donate-nav:hover { background-color: #fbc02d; }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 80vh;
+            overflow: hidden;
+            color: white;
+            padding: 180px 0 140px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            background: url('1000123320.jpg.jpeg') no-repeat center center;
+            background-size: cover;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .hero .container { position: relative; z-index: 2; }
+
+        /* Section Styling */
+        .section-padding { padding: 90px 0; }
+        .bg-light-custom { background-color: #f8f9fa; }
+
+        /* Founder Section Styling */
+        .founder-img-wrapper { position: relative; display: inline-block; }
+        .founder-img-wrapper::after { content: ""; position: absolute; top: 15px; left: 15px; width: 100%; height: 100%; border: 3px solid var(--rwanda-yellow); border-radius: 15px; z-index: -1; }
+        
+        /* Sponsorship Tiers */
+        .tier-card { border-radius: 15px; border: 1px solid #ddd; padding: 40px 20px; transition: 0.3s; background: white; height: 100%; display: flex; flex-direction: column; justify-content: center; }
+        .tier-featured { background: var(--rwanda-green); color: white; border: none; transform: scale(1.05); box-shadow: 0 15px 40px rgba(46, 125, 50, 0.3); z-index: 2; }
+        .tier-featured h2, .tier-featured h3, .tier-featured p { color: white !important; }
+        .badge-popular { background-color: var(--rwanda-yellow); color: #000; font-size: 0.7rem; padding: 5px 15px; border-radius: 20px; text-transform: uppercase; font-weight: bold; display: inline-block; margin-bottom: 15px; }
+        .btn-tier { border-radius: 50px; padding: 10px 30px; font-weight: bold; width: 100%; transition: 0.3s; border: 1px solid var(--rwanda-green); color: var(--rwanda-green); background: transparent; text-decoration: none; display: inline-block; }
+        .btn-tier-white { background: white; color: var(--rwanda-green); border: none; }
+        .btn-tier:hover { background: var(--rwanda-green); color: white; border-color: var(--rwanda-green); }
+        .btn-tier-white:hover { background: #f8f9fa; color: var(--rwanda-green); }
+
+        /* Program Cards */
+        .program-card { border: none; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: 0.3s; height: 100%; }
+        .program-card:hover { transform: translateY(-10px); }
+        .program-img { height: 200px; object-fit: cover; width: 100%; }
+
+        /* Gallery */
+        .gallery-item { position: relative; overflow: hidden; border-radius: 12px; height: 280px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .gallery-img { width: 100%; height: 100%; object-fit: cover; object-position: center top; transition: 0.5s; cursor: pointer; }
+        .gallery-item:hover .gallery-img { transform: scale(1.1); filter: brightness(1.1); }
+
+        /* Footer */
+        footer { background: #1a1a1a; color: white; padding: 70px 0 30px; }
+        .social-links a { width: 40px; height: 40px; background: rgba(255,255,255,0.1); display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; color: white; margin-right: 10px; transition: 0.3s; text-decoration: none; }
+        .social-links a:hover { background: var(--rwanda-yellow); color: black; transform: translateY(-3px); }
+
+        /* Floating WhatsApp */
+        .float-wa { position: fixed; bottom: 30px; right: 30px; background-color: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 2px 2px 10px rgba(0,0,0,0.2); z-index: 100; text-decoration: none; transition: 0.3s; }
+        .float-wa:hover { transform: scale(1.1); color: white; }
+
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand text-success d-flex align-items-center" href="index.html">
+                <i class="fas fa-drum me-2"></i> ISOKO Y’UMUCO
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#founder">Founder</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#programs">Programs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+                    <li class="nav-item ms-lg-3"><a class="btn btn-donate-nav" href="donate.html">Donate Now</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <h1 class="display-3 mb-3">Nurturing Rwandan Talent</h1>
+            <p class="lead mb-5 fs-4">Empowering children through culture, dance, and art.</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="donate.html" class="btn btn-success btn-lg px-5 py-3 shadow">Support a Child</a>
+                <a href="#about" class="btn btn-outline-light btn-lg px-5 py-3">Learn More</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-5 bg-white shadow-sm position-relative" style="z-index: 10; margin-top: -50px;">
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-md-8">
+                    <h4><i class="fas fa-flag-checkered text-warning me-2"></i> Monthly Goal</h4>
+                    <p class="text-muted mb-2">Target: 2,000,000 RWF for the National Talent Festival</p>
+                    <div class="progress" style="height: 25px; border-radius: 50px;">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning text-dark" style="width: 45%">45% Reached</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section-padding">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <img src="1000123320.jpg.jpeg" alt="Isoko Children performing" class="img-fluid rounded-4 shadow-lg">
+                </div>
+                <div class="col-lg-6 ps-lg-5">
+                    <h5 class="text-success text-uppercase fw-bold mb-3">Our Foundation</h5>
+                    <h2 class="mb-4">Preserving Culture, Building Futures</h2>
+                    <p class="text-muted">ISOKO Y’UMUCO LTD was founded to promote Rwandan culture and support talented children who lack the financial means to develop their potential. We believe that talent is a key to development and that every child deserves an equal opportunity to express their creativity.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="founder" class="section-padding bg-light-custom">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5 text-center mb-5 mb-lg-0">
+                    <div class="founder-img-wrapper">
+                        <img src="EIPL0885.jpg.jpg" alt="Eric Munyaneza" class="img-fluid rounded-4 shadow" style="max-height: 550px;">
+                    </div>
+                    <div class="mt-4">
+                        <h3 class="mb-0">Eric Munyaneza</h3>
+                        <p class="text-success fw-bold">Founder & Managing Director</p>
+                    </div>
+                </div>
+                <div class="col-lg-7 ps-lg-5">
+                    <h5 class="text-success text-uppercase fw-bold mb-3">Leadership</h5>
+                    <h2 class="mb-4">Message From Our Founder</h2>
+                    <p class="mb-3 text-dark">Eric MUNYANEZA is the Founder and Managing Director of Isoko y’Umuco Ltd, a cultural and arts-based social enterprise dedicated to advancing education and improving the welfare of underprivileged children in Rwanda and the wider region. He is driven by the core conviction that every child, regardless of their socio-economic background, deserves an equal opportunity to access education, nurture their talents, and build a hopeful future.</p>
+                    <p class="mb-4 text-dark">Under his leadership, Isoko y’Umuco Ltd serves as a transformative platform that utilizes arts and culture as a catalyst for social reintegration. The organization specifically supports children facing hardships—including poverty, disability, and orphanage—helping them return to school and regain their footing in society. By leveraging creative disciplines such as traditional dance, poetry, theater, and music, Eric believes that a child’s natural talent can become a sustainable fountain of development and opportunity.</p>
+                    
+                    <div class="row g-4 mb-5">
+                        <div class="col-md-6">
+                            <div class="p-4 bg-white rounded shadow-sm border-top border-4 border-success h-100">
+                                <h5 class="fw-bold"><i class="fas fa-eye text-success me-2"></i> Vision</h5>
+                                <p class="small text-muted mb-0">To be a leading center of excellence in Rwanda and the region, fostering a society where every child—regardless of their financial means—has the opportunity to learn, develop their talents, and live with the hope of a bright future through the power of culture and the arts.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="p-4 bg-white rounded shadow-sm border-top border-4 border-primary h-100">
+                                <h5 class="fw-bold"><i class="fas fa-bullseye text-primary me-2"></i> Mission</h5>
+                                <p class="small text-muted mb-0">To reintegrate underprivileged children into the education system and empower them psychologically and professionally through artistic discovery, school supply funding, and instilling self-confidence for successful social integration.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h4 class="mb-4">Key Objectives</h4>
+                    <div class="row g-3">
+                        <div class="col-md-4">
+                            <div class="p-3 bg-white rounded shadow-sm text-center h-100">
+                                <i class="fas fa-user-graduate fa-2x text-warning mb-3"></i>
+                                <h6 class="fw-bold">Educational Retention</h6>
+                                <p class="small text-muted mb-0">Reducing school dropout rates caused by poverty.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="p-3 bg-white rounded shadow-sm text-center h-100">
+                                <i class="fas fa-star fa-2x text-warning mb-3"></i>
+                                <h6 class="fw-bold">Talent Development</h6>
+                                <p class="small text-muted mb-0">Professionalizing abilities for financial independence.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="p-3 bg-white rounded shadow-sm text-center h-100">
+                                <i class="fas fa-heart fa-2x text-warning mb-3"></i>
+                                <h6 class="fw-bold">Psychosocial Support</h6>
+                                <p class="small text-muted mb-0">Using arts as a therapeutic tool for healing and trauma.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="donate" class="section-padding">
+        <div class="container text-center">
+            <h1 class="mb-2">Become a Sponsor</h1>
+            <p class="text-muted mb-5">Choose a tier to support a child's artistic journey.</p>
+            
+            <div class="row g-4 align-items-center">
+                <div class="col-lg-4">
+                    <div class="tier-card">
+                        <h3 class="mb-3">Cultural Starter</h3>
+                        <h2 class="text-success mb-3">25,000 <small class="fs-6">RWF</small></h2>
+                        <p class="text-muted small mb-4">Training, costumes, and art materials.</p>
+                        <a href="donate.html?amount=25000" class="btn btn-tier">Select</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="tier-card tier-featured">
+                        <span class="badge-popular">Most Popular</span>
+                        <h3 class="mb-3 text-white">Education Hero</h3>
+                        <h2 class="mb-3 text-white">55,000 <small class="fs-6">RWF</small></h2>
+                        <p class="small mb-4">Art training plus school supplies and uniforms.</p>
+                        <a href="donate.html?amount=55000" class="btn btn-tier btn-tier-white">Select</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="tier-card">
+                        <h3 class="mb-3">Full Empowerment</h3>
+                        <h2 class="text-success mb-3">120,000 <small class="fs-6">RWF</small></h2>
+                        <p class="text-muted small mb-4">Full education support, nutrition, and advanced art workshops.</p>
+                        <a href="donate.html?amount=120000" class="btn btn-tier">Select</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-5 pt-4">
+                <h4 class="mb-4"><i class="fas fa-university text-success me-2"></i> Direct Bank Transfer</h4>
+                <div class="row g-4 text-start">
+                    <div class="col-md-6">
+                        <div class="p-4 rounded border bg-light shadow-sm">
+                            <h6 class="text-primary border-bottom pb-2 mb-3"><i class="fas fa-globe-africa me-2"></i> RWF Account (Local)</h6>
+                            <div class="d-flex justify-content-between small mb-1"><span>Bank Name:</span> <strong>NCBA Bank Rwanda</strong></div>
+                            <div class="d-flex justify-content-between small mb-1"><span>Account Name:</span> <strong>ISOKO Y’UMUCO LTD</strong></div>
+                            <div class="d-flex justify-content-between small"><span>Account Number:</span> <strong>200116-11700022-62</strong></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="p-4 rounded border bg-light shadow-sm">
+                            <h6 class="text-success border-bottom pb-2 mb-3"><i class="fas fa-dollar-sign me-2"></i> USD Account (International)</h6>
+                            <div class="d-flex justify-content-between small mb-1"><span>Bank Name:</span> <strong>NCBA Bank Rwanda</strong></div>
+                            <div class="d-flex justify-content-between small mb-1"><span>SWIFT Code:</span> <strong>CBAFRWRW</strong></div>
+                            <div class="d-flex justify-content-between small"><span>Account Number:</span> <strong>200102-11700012-13</strong></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="programs" class="section-padding bg-light-custom">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h5 class="text-success text-uppercase fw-bold">What We Do</h5>
+                <h2>Our Core Programs</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="program-card bg-white h-100">
+                        <img src="1000144937.jpg.jpeg" alt="Dance Training" class="program-img">
+                        <div class="p-4">
+                            <h4>Traditional Dance</h4>
+                            <p class="text-muted small">Training children in traditional Rwandan dance to celebrate and preserve cultural heritage.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="program-card bg-white h-100">
+                        <div class="bg-secondary program-img d-flex align-items-center justify-content-center text-white">
+                            <i class="fas fa-microphone-alt fa-3x"></i>
+                        </div>
+                        <div class="p-4">
+                            <h4>Poetry & Theater</h4>
+                            <p class="text-muted small">Mastering public speaking and acting to deliver impactful messages to society.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="program-card bg-white h-100">
+                        <img src="1000144940.jpg.jpeg" alt="Music" class="program-img">
+                        <div class="p-4">
+                            <h4>Music & Performance</h4>
+                            <p class="text-muted small">Assisting children in performing meaningful songs, spanning traditional and modern genres.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="section-padding bg-dark text-white">
+        <div class="container">
+            <div class="row mb-5 align-items-end">
+                <div class="col-md-8">
+                    <h2 class="mb-0">Recent Moments</h2>
+                </div>
+            </div>
+            <div class="row g-3">
+                <div class="col-md-4"><div class="gallery-item"><img src="1000123320.jpg.jpeg" class="gallery-img" alt="Dance"></div></div>
+                <div class="col-md-4"><div class="gallery-item"><img src="1000144937.jpg.jpeg" class="gallery-img" alt="Culture"></div></div>
+                <div class="col-md-4"><div class="gallery-item"><img src="1000144940.jpg.jpeg" class="gallery-img" alt="Music"></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section-padding bg-light-custom">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 mb-4">
+                    <h2 class="mb-4">Get in Touch</h2>
+                    <p><i class="fas fa-phone text-success me-2"></i> +250 785 623 396</p>
+                    <p><i class="fas fa-envelope text-success me-2"></i> info@isokoyumuco.rw</p>
+                </div>
+                <div class="col-lg-7">
+                    <form class="bg-white p-4 rounded shadow-sm">
+                        <div class="row g-3">
+                            <div class="col-md-6"><input type="text" class="form-control" placeholder="Name" required></div>
+                            <div class="col-md-6"><input type="email" class="form-control" placeholder="Email" required></div>
+                            <div class="col-12"><textarea class="form-control" rows="4" placeholder="Message" required></textarea></div>
+                            <div class="col-12"><button type="submit" class="btn btn-success px-4">Send Message</button></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container text-center">
+            <h5 class="text-warning mb-4 fw-bold">ISOKO Y’UMUCO</h5>
+            <div class="social-links mb-4">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p class="small text-white-50 mb-0">© 2026 ISOKO Y’UMUCO LTD. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/250785623396" target="_blank" class="float-wa">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
